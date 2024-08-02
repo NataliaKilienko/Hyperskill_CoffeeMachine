@@ -93,7 +93,9 @@ function chooseCupSize() {
     }
 }
 
-while (true) {
+let running = true;
+
+while (running) {
     const action = input("Write action (buy, fill, take, remaining, milk flavor, cup size, exit):\n");
 
     switch (action) {
@@ -119,7 +121,8 @@ while (true) {
             chooseCupSize();
             break;
         case "exit":
-            process.exit();
+            running = false;
+            break;
         default:
             console.log("Unknown action. Please choose 'buy', 'fill', 'take', 'remaining', 'milk flavor', 'cup size', or 'exit'.");
     }
